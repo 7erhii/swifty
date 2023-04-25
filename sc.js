@@ -17,6 +17,8 @@ document.addEventListener('click', (e) => {
 
         node.classList.toggle('fa-lock-open')
         node.classList.toggle('fa-lock')
+    } else if (type === 'copy') {
+        copyToclickboard(e.target.textContent)
     }
 })
 
@@ -62,5 +64,5 @@ function setTextColor(element, bgColor) {
 
 
 function copyToclickboard(text) {
-    
+    return navigator.clipboard.writeText(text)
 }
